@@ -1,0 +1,361 @@
+{
+  "tfidf": {
+    "val_accuracy": 0.9020979020979021,
+    "accuracy": 0.9107142857142857,
+    "macro_f1": 0.9109383277340247,
+    "temperature": 0.7500651512446893,
+    "nll_raw": 0.37303220475485804,
+    "nll_calibrated": 0.33165247264725306,
+    "ece_raw": 0.06363819295974764,
+    "ece_calibrated": 0.008823706612295121,
+    "ms_per_ticket": 0.03489020551545788,
+    "selective": {
+      "0.95": {
+        "threshold": 0.6603920161426085,
+        "test_automation_rate": 0.8925324675324675,
+        "test_accuracy_on_automated": 0.9614405238268461
+      },
+      "0.98": {
+        "threshold": 0.8934501561841615,
+        "test_automation_rate": 0.7831168831168831,
+        "test_accuracy_on_automated": 0.9825870646766169
+      },
+      "0.99": {
+        "threshold": 0.9580353716478511,
+        "test_automation_rate": 0.6785714285714286,
+        "test_accuracy_on_automated": 0.991866028708134
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "virtual_card_not_working",
+        "predicted": "get_disposable_virtual_card",
+        "count": 5
+      },
+      {
+        "true": "pending_top_up",
+        "predicted": "top_up_failed",
+        "count": 5
+      },
+      {
+        "true": "why_verify_identity",
+        "predicted": "unable_to_verify_identity",
+        "count": 4
+      },
+      {
+        "true": "fiat_currency_support",
+        "predicted": "exchange_via_app",
+        "count": 4
+      },
+      {
+        "true": "top_up_failed",
+        "predicted": "top_up_reverted",
+        "count": 4
+      },
+      {
+        "true": "disposable_card_limits",
+        "predicted": "get_disposable_virtual_card",
+        "count": 3
+      },
+      {
+        "true": "get_disposable_virtual_card",
+        "predicted": "getting_virtual_card",
+        "count": 3
+      },
+      {
+        "true": "balance_not_updated_after_bank_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 3
+      }
+    ],
+    "train_seconds": 7.836144166998565,
+    "name": "TF-IDF + logistic regression"
+  },
+  "emb": {
+    "val_accuracy": 0.9240759240759241,
+    "accuracy": 0.9314935064935065,
+    "macro_f1": 0.9314474744407718,
+    "temperature": 0.647825845517401,
+    "nll_raw": 0.3378639817237854,
+    "nll_calibrated": 0.2604059875011444,
+    "ece_raw": 0.10836739418907215,
+    "ece_calibrated": 0.013345586881041512,
+    "ms_per_ticket": 0.34626770844719335,
+    "selective": {
+      "0.95": {
+        "threshold": 0.5588058829307556,
+        "test_automation_rate": 0.9483766233766234,
+        "test_accuracy_on_automated": 0.9544676480657309
+      },
+      "0.98": {
+        "threshold": 0.9099022150039673,
+        "test_automation_rate": 0.7857142857142857,
+        "test_accuracy_on_automated": 0.9867768595041322
+      },
+      "0.99": {
+        "threshold": 0.9492815136909485,
+        "test_automation_rate": 0.7136363636363636,
+        "test_accuracy_on_automated": 0.9909008189262967
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "pending_transfer",
+        "predicted": "transfer_timing",
+        "count": 6
+      },
+      {
+        "true": "beneficiary_not_allowed",
+        "predicted": "failed_transfer",
+        "count": 4
+      },
+      {
+        "true": "supported_cards_and_currencies",
+        "predicted": "getting_spare_card",
+        "count": 4
+      },
+      {
+        "true": "top_up_reverted",
+        "predicted": "top_up_failed",
+        "count": 4
+      },
+      {
+        "true": "declined_transfer",
+        "predicted": "declined_card_payment",
+        "count": 4
+      },
+      {
+        "true": "fiat_currency_support",
+        "predicted": "exchange_via_app",
+        "count": 3
+      },
+      {
+        "true": "pending_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 3
+      },
+      {
+        "true": "pending_transfer",
+        "predicted": "balance_not_updated_after_bank_transfer",
+        "count": 3
+      }
+    ],
+    "train_seconds": 4.8814998749876395,
+    "name": "bge-small-en-v1.5 embeddings + logistic regression"
+  },
+  "ft_minilm": {
+    "accuracy": 0.687012987012987,
+    "macro_f1": 0.6251663940256162,
+    "temperature": 0.36140614888964323,
+    "nll_raw": 1.7290979623794556,
+    "nll_calibrated": 1.1653761863708496,
+    "ece_raw": 0.4545899508666102,
+    "ece_calibrated": 0.09301751073111188,
+    "ms_per_ticket": 1.0419756899415453,
+    "selective": {
+      "0.95": {
+        "threshold": 0.8285027742385864,
+        "test_automation_rate": 0.2159090909090909,
+        "test_accuracy_on_automated": 0.9428571428571428
+      },
+      "0.98": {
+        "threshold": 0.9523617625236511,
+        "test_automation_rate": 0.04837662337662338,
+        "test_accuracy_on_automated": 0.959731543624161
+      },
+      "0.99": {
+        "threshold": 0.9661163687705994,
+        "test_automation_rate": 0.03149350649350649,
+        "test_accuracy_on_automated": 0.9690721649484536
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "verify_my_identity",
+        "predicted": "why_verify_identity",
+        "count": 39
+      },
+      {
+        "true": "Refund_not_showing_up",
+        "predicted": "request_refund",
+        "count": 39
+      },
+      {
+        "true": "cash_withdrawal_not_recognised",
+        "predicted": "declined_cash_withdrawal",
+        "count": 37
+      },
+      {
+        "true": "unable_to_verify_identity",
+        "predicted": "why_verify_identity",
+        "count": 36
+      },
+      {
+        "true": "contactless_not_working",
+        "predicted": "passcode_forgotten",
+        "count": 36
+      },
+      {
+        "true": "wrong_exchange_rate_for_cash_withdrawal",
+        "predicted": "card_payment_wrong_exchange_rate",
+        "count": 36
+      },
+      {
+        "true": "get_disposable_virtual_card",
+        "predicted": "disposable_card_limits",
+        "count": 34
+      },
+      {
+        "true": "declined_transfer",
+        "predicted": "failed_transfer",
+        "count": 31
+      }
+    ],
+    "train_seconds": 209.53811716701603,
+    "name": "fine-tuned MiniLM-L12-H384-uncased"
+  },
+  "ft_samelr": {
+    "val_accuracy": 0.8581418581418582,
+    "accuracy": 0.8389610389610389,
+    "macro_f1": 0.8150532954683802,
+    "temperature": 0.38299502229057797,
+    "nll_raw": 1.3570657968521118,
+    "nll_calibrated": 0.5874273180961609,
+    "ece_raw": 0.5227887633897655,
+    "ece_calibrated": 0.036357747985945106,
+    "ms_per_ticket": 1.1416832928533678,
+    "selective": {
+      "0.95": {
+        "threshold": 0.7488258481025696,
+        "test_automation_rate": 0.6827922077922078,
+        "test_accuracy_on_automated": 0.9472182596291013
+      },
+      "0.98": {
+        "threshold": 0.9591711759567261,
+        "test_automation_rate": 0.3116883116883117,
+        "test_accuracy_on_automated": 0.9854166666666667
+      },
+      "0.99": {
+        "threshold": 0.9978579878807068,
+        "test_automation_rate": 0.011363636363636364,
+        "test_accuracy_on_automated": 1.0
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "get_disposable_virtual_card",
+        "predicted": "disposable_card_limits",
+        "count": 35
+      },
+      {
+        "true": "virtual_card_not_working",
+        "predicted": "getting_virtual_card",
+        "count": 32
+      },
+      {
+        "true": "card_swallowed",
+        "predicted": "cash_withdrawal_not_recognised",
+        "count": 32
+      },
+      {
+        "true": "card_acceptance",
+        "predicted": "country_support",
+        "count": 28
+      },
+      {
+        "true": "compromised_card",
+        "predicted": "card_payment_not_recognised",
+        "count": 27
+      },
+      {
+        "true": "contactless_not_working",
+        "predicted": "lost_or_stolen_phone",
+        "count": 17
+      },
+      {
+        "true": "verify_my_identity",
+        "predicted": "why_verify_identity",
+        "count": 12
+      },
+      {
+        "true": "lost_or_stolen_card",
+        "predicted": "lost_or_stolen_phone",
+        "count": 11
+      }
+    ],
+    "train_seconds": 162.06123341695638,
+    "name": "fine-tuned bge-small-en-v1.5"
+  },
+  "ft": {
+    "val_accuracy": 0.9280719280719281,
+    "accuracy": 0.935064935064935,
+    "macro_f1": 0.9351442618119268,
+    "temperature": 1.4605553787866834,
+    "nll_raw": 0.26859068870544434,
+    "nll_calibrated": 0.2385430634021759,
+    "ece_raw": 0.03213208935090476,
+    "ece_calibrated": 0.014261068655298874,
+    "ms_per_ticket": 0.940695630504399,
+    "selective": {
+      "0.95": {
+        "threshold": 0.5924887657165527,
+        "test_automation_rate": 0.9448051948051948,
+        "test_accuracy_on_automated": 0.9608247422680413
+      },
+      "0.98": {
+        "threshold": 0.8918901085853577,
+        "test_automation_rate": 0.8551948051948052,
+        "test_accuracy_on_automated": 0.9836750189825361
+      },
+      "0.99": {
+        "threshold": 0.9626352787017822,
+        "test_automation_rate": 0.7347402597402597,
+        "test_accuracy_on_automated": 0.9929297392841361
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "pending_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 6
+      },
+      {
+        "true": "card_delivery_estimate",
+        "predicted": "card_arrival",
+        "count": 4
+      },
+      {
+        "true": "transfer_timing",
+        "predicted": "balance_not_updated_after_bank_transfer",
+        "count": 3
+      },
+      {
+        "true": "card_arrival",
+        "predicted": "card_delivery_estimate",
+        "count": 3
+      },
+      {
+        "true": "balance_not_updated_after_bank_transfer",
+        "predicted": "transfer_timing",
+        "count": 3
+      },
+      {
+        "true": "get_disposable_virtual_card",
+        "predicted": "getting_virtual_card",
+        "count": 3
+      },
+      {
+        "true": "balance_not_updated_after_bank_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 3
+      },
+      {
+        "true": "pending_transfer",
+        "predicted": "transfer_timing",
+        "count": 3
+      }
+    ],
+    "train_seconds": 170.6838829999906,
+    "name": "fine-tuned bge-small-en-v1.5"
+  }
+}
