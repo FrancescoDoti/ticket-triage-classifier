@@ -16,7 +16,7 @@ Training used the train split minus a stratified 10% validation set. Temperature
 
 ![risk-coverage](results/risk_coverage.png)
 
-At 95% and 99% targets the fine-tuned model automates 94.5% and 73.5% of tickets, achieving 96.1% and 99.3% accuracy. Every threshold, chosen on validation data, hit its target on test except the 95% one for embeddings (95.4%, just above). Full numbers are in [`results/results.json`](results/results.json).
+At 95% and 99% targets the fine-tuned model automates 94.5% and 73.5% of tickets, achieving 96.1% and 99.3% accuracy. All nine thresholds (3 models × 3 targets), chosen on validation data, met their target on test. The closest call was embeddings at the 95% target, which achieved 95.4%. Full numbers are in [`results/results.json`](results/results.json).
 
 For reference, the Banking77 paper reports about 93.6% for BERT-base (110M parameters). A fine-tuned 33M-parameter model matches it here.
 
